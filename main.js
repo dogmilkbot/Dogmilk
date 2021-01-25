@@ -21,8 +21,11 @@ client.once('ready', () => {
     console.log('DogMilk is online!')
 });
 
+
+
 client.on('message',  message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
+
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -30,6 +33,9 @@ client.on('message',  message =>{
     if(command === 'hi'){
         client.commands.get('hey').execute(message,args);
         
+    }
+    if(command === 'serverinfo'){
+        client.commands.get('serverinfo').execute(message,args);
     }
     
     else if(command === 'op.gg'){
