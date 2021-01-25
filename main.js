@@ -31,19 +31,25 @@ client.on('message',  message =>{
     const command = args.shift().toLowerCase();
 
     if(command === 'hi'){
-        client.commands.get('hey').execute(message,args);
-        
-    }
-    if(command === 'serverinfo'){
-        client.commands.get('serverinfo').execute(message,args);
+        client.commands.get('hey').execute(message,args);        
     }
     
+    else if(command === 'serverinfo'){
+        client.commands.get('serverinfo').execute(message,args);
+    } 
+
+    else if(command === 'kekw'){
+        client.commands.get('kekw').execute(message,args);
+    }
+
     else if(command === 'op.gg'){
         client.commands.get('opgg').execute(message,args);
     }
+
     else if(command === 'cock'){
         client.commands.get('cock').execute(message,args);
     }
+
     else if(command === 'meme'){
         client.commands.get('meme').execute(message,args);
     }
