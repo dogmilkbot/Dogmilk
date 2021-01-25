@@ -1,17 +1,25 @@
 {
   "name": "discordbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "main.js",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Lulle&Karl",
+  "author": "Lulle&Kalle",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.3.1",
+    "discord.js": "^12.5.1",
     "op.gg-api": "^2.0.5-alpha",
     "puppeteer": "^5.2.1",
     "webshot": "^0.18.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dogmilkbot/Dogmilk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dogmilkbot/Dogmilk/issues"
+  },
+  "homepage": "https://github.com/dogmilkbot/Dogmilk#readme"
 }
