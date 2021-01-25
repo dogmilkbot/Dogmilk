@@ -1,0 +1,17 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lulle&Karl",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "op.gg-api": "^2.0.5-alpha",
+    "puppeteer": "^5.2.1",
+    "webshot": "^0.18.0"
+  }
+}
