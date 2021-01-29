@@ -33,6 +33,10 @@ client.on('message',  message =>{
     if(command === 'hi'){
         client.commands.get('hey').execute(message,args);        
     }
+
+    else if(command === 'help'){
+        client.commands.get('help').execute(message,args);
+    }
     
     else if(command === 'serverinfo'){
         client.commands.get('serverinfo').execute(message,args);

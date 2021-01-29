@@ -1,34 +1,33 @@
 const { DiscordAPIError } = require("discord.js")
 const Discord = require('discord.js')
 module.exports = {
-    name: 'serverinfo',
-    description: "this displays serverinfo",
+    name: 'help',
+    description: "this displays the commands in an embed",
     execute(message, args){
         const { guild } = message
         //console.log (guild)
     
-        const { name, region, memberCount, owner } = guild
+        const { name, region, memberCount } = guild
         const icon = guild.iconURL()
     
         //console.log(name, region, memberCount, icon)
     
         const embed = new Discord.MessageEmbed()
-        .setTitle(`Server info for "${name}"`)
+        .setTitle(`Available commands`)
         .setThumbnail(icon)
         .addFields(
             {
-            name: 'Region',
-            value: region,
+            name: 'help',
+            value: "Displays the available commands",
         },
         {
-            name: 'Members',
-            value: memberCount,
+            name: 'serverinfo',
+            value: "Displays serverinfo",
         },
         {
-            name: 'Owner',
-            value: owner,
+            name: 'cock',
+            value: "8====D",
         }
-
         )
 
         message.channel.send(embed)
