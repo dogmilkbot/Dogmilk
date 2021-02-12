@@ -5,12 +5,10 @@ module.exports = {
     description: "this displays the commands in an embed",
     execute(message, args){
         const { guild } = message
-        //console.log (guild)
     
         const { name, region, memberCount } = guild
         const icon = guild.iconURL()
     
-        //console.log(name, region, memberCount, icon)
     
         const embed = new Discord.MessageEmbed()
         .setTitle(`Available commands`)

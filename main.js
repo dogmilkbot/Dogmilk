@@ -34,6 +34,10 @@ client.on('message',  message =>{
         client.commands.get('hey').execute(message,args);        
     }
 
+    else if(command === 'coinflip'){
+        client.commands.get('coinflip').execute(message,args,command);
+    }
+
     else if(command === 'help'){
         client.commands.get('help').execute(message,args);
     }
@@ -44,10 +48,6 @@ client.on('message',  message =>{
 
     else if(command === 'kekw'){
         client.commands.get('kekw').execute(message,args);
-    }
-
-    else if(command === 'op.gg'){
-        client.commands.get('opgg').execute(message,args);
     }
 
     else if(command === 'cock'){
