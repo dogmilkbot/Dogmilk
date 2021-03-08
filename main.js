@@ -32,6 +32,7 @@ client.on('message',  message =>{
 
     if(command === 'hi'){
         client.commands.get('hey').execute(message,args);        
+        //Says hi to the user
     }
 
     else if(command === 'coinflip'){
@@ -45,18 +46,22 @@ client.on('message',  message =>{
     else if(command === 'serverinfo'){
         client.commands.get('serverinfo').execute(message,args);
     } 
+    //Provides server info
 
     else if(command === 'kekw'){
         client.commands.get('kekw').execute(message,args);
     }
+    //KEKW
 
     else if(command === 'cock'){
         client.commands.get('cock').execute(message,args);
     }
+    //8====D
 
     else if(command === 'meme'){
         client.commands.get('meme').execute(message,args);
     }
+    //Sends a random meme
     
 });
 
