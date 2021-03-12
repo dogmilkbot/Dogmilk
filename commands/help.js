@@ -25,9 +25,13 @@ module.exports = {
         {
             name: 'cock',
             value: "8====D",
-        }
+        },
+        {
+            name: 'coinflip',
+            value: "!coinflip heads or !coinflip tails",
+        },
         )
-
+        
         message.channel.send(embed)
 
     } 

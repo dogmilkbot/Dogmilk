@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
-
-const prefix = '!';
+const config = require('./config.json')
+const { prefix } = require('./config.json')
 
 const fs = require('fs');
 const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require('constants');
@@ -37,10 +36,12 @@ client.on('message',  message =>{
 
     else if(command === 'coinflip'){
         client.commands.get('coinflip').execute(message,args,command);
+        //the user does /coinflip heads/tails 
     }
 
     else if(command === 'help'){
         client.commands.get('help').execute(message,args);
+        //Provides the bot commands
     }
     
     else if(command === 'serverinfo'){
