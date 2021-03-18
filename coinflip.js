@@ -1,9 +1,9 @@
-module.exports = {
-    name: 'coinflip',
-    description: "flips a coin",
-    execute(message, args, command){
+const command = require('./command')
+module.exports = (client) => {
 
-        //console.log(message);
+    
+    command(client, 'coinflip', async (message) => {
+
         const chosen = message.content.slice(9);
         console.log(chosen);
         const decider = Math.floor(Math.random() * 2);
@@ -36,5 +36,5 @@ module.exports = {
             console.log("The coin flipped tals. You lost!")
         }
         
-    }
+    })
 }

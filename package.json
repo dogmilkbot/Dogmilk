@@ -10,9 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "op.gg-api": "^2.0.5-alpha",
-    "puppeteer": "^5.2.1",
-    "webshot": "^0.18.0"
+    "mongoose": "^5.12.0"
   },
   "repository": {
     "type": "git",

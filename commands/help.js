@@ -18,14 +18,12 @@ module.exports = {
             name: 'help',
             value: "Displays the available commands",
         },
+        
         {
             name: 'serverinfo',
             value: "Displays serverinfo",
         },
-        {
-            name: 'cock',
-            value: "8====D",
-        },
+
         {
             name: 'coinflip',
             value: "!coinflip heads or !coinflip tails",

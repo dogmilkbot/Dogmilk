@@ -1,9 +1,8 @@
 module.exports = {
-    name: 'hey',
-    description: "this says hey",
-    execute(message, args){
-        message.channel.send('hey!');
-    }
-
-    
-}
+    commands: 'hi',
+    minArgs: 0,
+    maxArgs: 0,
+    callback: (message, arguments, text) => {
+      message.reply('Pong!')
+    },
+  }
