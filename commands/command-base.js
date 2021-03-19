@@ -56,8 +56,7 @@ module.exports = (client, commandOptions) => {
 
   // Ensure the command and aliases are in an array
   if (typeof commands === 'string') {
-    commands = [commands];
-    console.log(commands)
+    commands = [commands]
   }
 
 
@@ -75,12 +74,7 @@ module.exports = (client, commandOptions) => {
     const { member, content, guild } = message
 
     for (const alias of commands) {
-      const command = `${prefix}${alias.toLowerCase()}`
-
-      if (
-        content.toLowerCase().startsWith(`${command} `) ||
-        content.toLowerCase() === command
-      ) {
+      if (content.toLowerCase().startsWith(`${prefix}${alias.toLowerCase()}`)) {
         // A command has been ran
 
         // Ensure the user has the required permissions
@@ -123,7 +117,7 @@ module.exports = (client, commandOptions) => {
         }
 
         // Handle the custom command code
-        callback(message, arguments, arguments.join(' '), client)
+        callback(message, arguments, arguments.join(' '))
 
         return
       }

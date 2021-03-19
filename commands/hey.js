@@ -1,8 +1,6 @@
 module.exports = {
     commands: 'hi',
-    minArgs: 0,
-    maxArgs: 0,
-    callback: (message, arguments, text) => {
-      message.reply('Pong!')
+    callback: (message, arguments, text, commands) => {
+      message.reply('hey!')
     },
   }
