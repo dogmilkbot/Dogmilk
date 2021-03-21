@@ -1,9 +1,9 @@
 const { DiscordAPIError } = require("discord.js")
 const Discord = require('discord.js')
 module.exports = {
-    name: 'serverinfo',
+    commands: 'serverinfo',
     description: "this displays serverinfo",
-    execute(message, args){
+    callback:(message, args) =>{
         const { guild } = message
         //console.log (guild)
     

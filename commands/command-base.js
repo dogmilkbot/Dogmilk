@@ -1,4 +1,7 @@
 const { prefix } = require('../config.json')
+const fs = require('fs');
+const { exit } = require('process');
+
 
 const validatePermissions = (permissions) => {
   const validPermissions = [
@@ -56,10 +59,10 @@ module.exports = (client, commandOptions) => {
 
   // Ensure the command and aliases are in an array
   if (typeof commands === 'string') {
-    commands = [commands];
-    console.log(commands)
+    commands = [commands]
   }
 
+  console.log(`Registering command "${commands[0]}"`)
 
   // Ensure the permissions are in an array and are all valid
   if (permissions.length) {
@@ -71,11 +74,16 @@ module.exports = (client, commandOptions) => {
   }
 
   // Listen for messages
-  client.on('message', (message) => {
-    const { member, content, guild } = message
+  client.on('message', async (message) => {
+   
 
+    const { member, content, guild } = message
+    
+   
     for (const alias of commands) {
       const command = `${prefix}${alias.toLowerCase()}`
+      
+
 
       if (
         content.toLowerCase().startsWith(`${command} `) ||

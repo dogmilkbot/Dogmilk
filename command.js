@@ -8,16 +8,6 @@ module.exports = (client, aliases, callback) => {
   client.on('message', (message) => {
     const { content } = message
 
-    //blacklisted word check
-    var foundinText=false;
-    for(var i in blacklisted){
-        if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundinText = true;
-        
-    }
-    if(foundinText){
-        message.delete();
-        message.channel.send('Sorry, that word is blacklisted')
-    }  
 
 
     aliases.forEach((alias) => {

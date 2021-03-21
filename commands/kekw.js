@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'kekw',
+    commands: 'kekw',
     description: "KEK",
     execute(message, args){
         message.channel.send('KEKW');

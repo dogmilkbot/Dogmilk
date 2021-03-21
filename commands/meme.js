@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'meme',
+    commands: 'meme',
     description: "random meme",
     execute(message, args){
 

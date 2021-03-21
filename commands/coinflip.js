@@ -1,8 +1,7 @@
-const command = require('./command')
-module.exports = (client) => {
+module.exports = {
 
-    
-    command(client, 'coinflip', async (message) => {
+    commands: 'coinflip',
+    callback:(message, args) => {
 
         const chosen = message.content.slice(9);
         console.log(chosen);
@@ -33,8 +32,8 @@ module.exports = (client) => {
         if (decider == 0 && chosen === " heads")
         {
             message.channel.send("The coin flipped tals. You lost!");
-            console.log("The coin flipped tals. You lost!")
+            console.log("The coin flipped tails. You lost!")
         }
         
-    })
+    }
 }

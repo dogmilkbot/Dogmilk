@@ -1,7 +1,7 @@
 const { DiscordAPIError } = require("discord.js")
 const Discord = require('discord.js')
 module.exports = {
-    name: 'help',
+    commands: 'help',
     description: "this displays the commands in an embed",
     execute(message, args){
         const { guild } = message
