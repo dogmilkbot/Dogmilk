@@ -5,14 +5,21 @@ const fs = require('fs');
 const config = require('./config.json')
 const { prefix } = require('./config.json')
 const mongo = require('./mongo')
-
-
+const welcomeSchema = require('./welcome-schema')
 
 client.on('ready', async () => {
   console.log('The client is ready!')
-
   const baseFile = 'command-base.js'
   const commandBase = require(`./commands/${baseFile}`)
+
+  await mongo().then((mongoose) => {
+    try {
+      console.log('Connected to mongo!')
+    } finally {
+      mongoose.connection.close()
+    }
+  })
+
 
   const readCommands = (dir) => {
     const files = fs.readdirSync(path.join(__dirname, dir))
@@ -28,7 +35,43 @@ client.on('ready', async () => {
     }
   }
   readCommands('commands')
+  
 
+  //welcome message
+  
+  client.on('guildMemberAdd', (member) => {
+    onJoin(member)
+    return
+  })
+
+  const cache = {}
+  const onJoin = async (member) => {
+    const { guild } = member
+
+    let data = cache[guild.id]
+
+    //if (!data) {
+      console.log('FETCHING FROM DATABASE')
+
+      await mongo().then(async (mongoose) => {
+        try {
+          const result = await welcomeSchema.findOne({ _id: guild.id })
+
+          cache[guild.id] = data = [result.channelId, result.text]
+        } finally {
+          mongoose.connection.close()
+        }
+      })
+    //}
+
+    const channelId = data[0]
+    const text = data[1]
+
+    const channel = guild.channels.cache.get(channelId)
+    channel.send(text/*.replace(/<@>/g, `<@${member.id}>`)*/)
+  }
+  
+//kollar om meddelandet har blacklistade ord i sig
   client.on('message', message => {
 
  //blacklistade ord
@@ -40,6 +83,7 @@ client.on('ready', async () => {
  if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundinText = true;
  
 }
+//tar bort meddelandet om det har blacklistade ord
 if(foundinText){
  message.delete();
  message.channel.send('Sorry, that word is blacklisted')

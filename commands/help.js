@@ -1,9 +1,9 @@
 const { DiscordAPIError } = require("discord.js")
 const Discord = require('discord.js')
-module.exports = {
+module.exports =  {
     commands: 'help',
     description: "this displays the commands in an embed",
-    execute(message, args){
+    callback: (message, args) => {
         const { guild } = message
     
         const { name, region, memberCount } = guild
@@ -27,6 +27,10 @@ module.exports = {
         {
             name: 'coinflip',
             value: "!coinflip heads or !coinflip tails",
+        },
+        {
+            name: 'setwelcome',
+            value: "!setwelcome <message> (admin command)"
         },
         )
         
