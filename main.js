@@ -92,4 +92,4 @@ if(foundinText){
 
 })
 
-client.login('NzQ3MTQyMTYzNzQ1MzQxNDYx.X0KkXQ.ZuGxQ-egYuaW1aG95ohZyl0i3G0');
+client.login(''); //token som man får från discord api
